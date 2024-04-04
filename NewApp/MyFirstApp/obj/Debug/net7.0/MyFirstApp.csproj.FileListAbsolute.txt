@@ -1,0 +1,14 @@
+D:\ptpmql2\NewApp\MyFirstApp\bin\Debug\net7.0\MyFirstApp.exe
+D:\ptpmql2\NewApp\MyFirstApp\bin\Debug\net7.0\MyFirstApp.deps.json
+D:\ptpmql2\NewApp\MyFirstApp\bin\Debug\net7.0\MyFirstApp.runtimeconfig.json
+D:\ptpmql2\NewApp\MyFirstApp\bin\Debug\net7.0\MyFirstApp.dll
+D:\ptpmql2\NewApp\MyFirstApp\bin\Debug\net7.0\MyFirstApp.pdb
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.AssemblyInfoInputs.cache
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.AssemblyInfo.cs
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.csproj.CoreCompileInputs.cache
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.dll
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\refint\MyFirstApp.dll
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.pdb
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\MyFirstApp.genruntimeconfig.cache
+D:\ptpmql2\NewApp\MyFirstApp\obj\Debug\net7.0\ref\MyFirstApp.dll
