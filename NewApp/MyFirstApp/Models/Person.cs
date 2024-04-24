@@ -16,6 +16,12 @@ public class person
         Address = Console.ReadLine() ?? Address;
         Console.WriteLine("Age : ");
         Age = Convert.ToInt16(Console.ReadLine());
+        // xử lý ngoại lệ
+        try {
+          Age = Convert.ToInt16(Console.ReadLine());
+        }catch(Exception e) {
+            Age = 0;
+        }
     }
 
     public void Display() {
