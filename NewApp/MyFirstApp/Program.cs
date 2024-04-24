@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections;
+using System.Collections.Specialized;
 using Internal;
 using System;
 using  MyFirstApp.Models;
@@ -75,6 +76,24 @@ public class Program {
         {
             
         }
-    }
+        // tạo arrayList
+        ArrayList arrlist = new ArrayList();
+        // thêm 1 phần tử vào arraylist
+        arrlist.Add(value);
+        arrlist[5];
+        // none generic conllections
+        ArrayList arrlist = new ArrayList();
+        for (int i = 0; i < 5; i++)
+        {
+            Student std = new Student();
+            std.NhapThongTin();
+            arrList.Add(std);
+        }
+        // hiển thị các phần tử trong arrList sử dụng vòng lặp for
+        for(int i = 0; i < 5; i++) {
+            Student std  = (Student) arrList[i];
+            std.HienThiThongTin();
+        }
+     }
 
 }
