@@ -21,6 +21,14 @@ public class Program {
         ps2.Age = 22;
         // gọi phương thức hiển thị thông tin
         ps2.Display();
+
+
+
+        // tạo obj cho từ class student
+        Student std = new Student();
+        std.EnterData();
+        std.StudentCode = "2021050654";
+        std.Display();
     }
 
 }
