@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ptpmql2.Controllers 
 {    
-public class HelloWorldController : Controller
+public class PersonController : Controller
 {
     public IActionResult Index() { return View(); }
 }
