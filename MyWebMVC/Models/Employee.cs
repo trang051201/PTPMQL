@@ -7,3 +7,4 @@ public class Employee : Person
     public int EmployeeId { get; set; } = 0;
     public int EmployeeAge { get; set;} = 0;
 }
+
