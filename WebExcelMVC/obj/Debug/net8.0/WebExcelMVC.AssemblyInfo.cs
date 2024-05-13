@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebExcelMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2ba559247043e07dec9135162b445535a0fc7be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f083500a9c7e754de9a23307f37b931fa7b9742e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebExcelMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebExcelMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

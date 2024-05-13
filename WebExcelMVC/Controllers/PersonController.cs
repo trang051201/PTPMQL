@@ -4,7 +4,10 @@ using WebExcelMVC.Models;
 using WebExcelMVC.Data;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 using WebExcelMVC.Models.Process;
+using OfficeOpenXml;
+using X.PagedList;
 
 namespace WebExcelMVC.Controllers
 {
@@ -12,6 +15,12 @@ namespace WebExcelMVC.Controllers
     {
         // Khai báo ApplicationDbContext để làm việc với CSDL
         private readonly ApplicationDbContext _context;
+        // tạo phân trang
+        public async Task<IActionResult> Index(int ? page) {
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
+            return View(model);
+        }
+
         // create process
         private ExcelProcess _excelProcess = new ExcelProcess();
         public PersonController(ApplicationDbContext context)
@@ -100,6 +109,7 @@ namespace WebExcelMVC.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        // action delete
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Person == null)
@@ -127,6 +137,7 @@ namespace WebExcelMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        // action Upload
         public async Task<IActionResult> Upload(IFormFile file)
         {
             if (file != null)
@@ -140,7 +151,7 @@ namespace WebExcelMVC.Controllers
                 {
                     // rename file to server
                     // Loại bỏ ký tự không hợp lệ (: trong trường hợp này)
-                    var fileName = DateTime.Now.ToString("yyyyMMddHHmmss").Replace(':', '') + fileExtension;
+                    var fileName = DateTime.Now.ToString("yyyyMMddHHmmss").Replace(':', '-') + fileExtension;
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Upload", "Excels", fileName);
                     var fileDirectory = Path.GetDirectoryName(filePath);
                     // Kiểm tra và tạo thư mục nếu cần thiết
@@ -172,6 +183,27 @@ namespace WebExcelMVC.Controllers
                 }
             }
             return View();
+        }
+        // action download
+        public IActionResult Download()
+        {
+            // Tên của file khi tải lên
+            var fileName = "YourListPerson" + ".xlsx";
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                // thêm ký tự vào cột A1    
+                worksheet.Cells["A1"].Value = "PersonID";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                //lấy tất cả thông tin người dùng
+                var personList = _context.Person.ToList();
+                //Đổ dữ liệu vào bảng tính
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                //Tải file
+                return File(stream, "application/vnd.openxmlformats-officedocumet.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

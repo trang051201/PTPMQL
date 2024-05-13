@@ -280,3 +280,4 @@ C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.dll
 C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.Interfaces.dll
 C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.System.Drawing.dll
 C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\PTPMQL\WebExcelMVC\obj\Debug\net8.0\WebExcelMVC.MvcApplicationPartsAssemblyInfo.cs
