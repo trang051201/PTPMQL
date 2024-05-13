@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "pk5Ajyl+JOJSgiIHBME/DKz8YMetUsIqiczpkQoKTE5V0ujkRA7LSrQ1u+Zv1fVw6xlE+AWNcVMPJr+Plio7Qw==",
+  "dgSpecHash": "rryGb2nwgOjWOms4gmL1r+0H7jDMukJ4BYOYwxUxmScL2FQIBoYZiGF2beooy8yI6mPCOLUeGDDhTjOjz/i9+Q==",
   "success": true,
-  "projectFilePath": "D:\\ptpmql2\\MyWebMVC\\MyWebMVC.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\PTPMQL\\MyWebMVC\\MyWebMVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\trang\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\trang\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\trang\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\trang\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.18\\microsoft.netcore.app.host.win-x64.7.0.18.nupkg.sha512"
+  ],
   "logs": []
 }
