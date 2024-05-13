@@ -276,3 +276,7 @@ C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Ca
 C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\PTPMQL\WebExcelMVC\obj\Debug\net8.0\WebExcel.7B851111.Up2Date
+C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.dll
+C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+C:\PTPMQL\WebExcelMVC\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll

@@ -4,6 +4,7 @@ using WebExcelMVC.Models;
 using WebExcelMVC.Data;
 using System.Threading.Tasks;
 using System.IO;
+using WebExcelMVC.Models.Process;
 
 namespace WebExcelMVC.Controllers
 {
@@ -11,6 +12,8 @@ namespace WebExcelMVC.Controllers
     {
         // Khai báo ApplicationDbContext để làm việc với CSDL
         private readonly ApplicationDbContext _context;
+        // create process
+        private ExcelProcess _excelProcess = new ExcelProcess();
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
@@ -136,14 +139,36 @@ namespace WebExcelMVC.Controllers
                 else
                 {
                     // rename file to server
-                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Upload/Excels", fileName);
-                    var fileLocation = new FileInfo(filePath).ToString();
+                    // Loại bỏ ký tự không hợp lệ (: trong trường hợp này)
+                    var fileName = DateTime.Now.ToString("yyyyMMddHHmmss").Replace(':', '') + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Upload", "Excels", fileName);
+                    var fileDirectory = Path.GetDirectoryName(filePath);
+                    // Kiểm tra và tạo thư mục nếu cần thiết
+                    if (!Directory.Exists(fileDirectory))
+                    {
+                        Directory.CreateDirectory(fileDirectory);
+                    }
+
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         // save file to server
                         await file.CopyToAsync(stream);
                     }
+                    // Đọc dữ liệu từ file Excel và thêm vào DbContext
+                    var dt = _excelProcess.ExcelToDataTable(filePath);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var person = new PersonModel
+                        {
+                            PersonId = row[0].ToString(),
+                            FullName = row[1].ToString(),
+                            Address = row[2].ToString()
+                        };
+                        _context.Person.Add(person);
+                    }
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
                 }
             }
             return View();
