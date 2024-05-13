@@ -1,10 +1,15 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-namespace WebExcelMVC.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class PersonModel
+namespace WebExcelMVC.Models
 {
-    public string PersonId { get; set; } = "";
-    public string FullName { get; set; } = "";
-    public string Address { get; set; } = "";
+    [Table("Persons")]
+    public class PersonModel
+    {
+        [Key]
+        public string PersonId { get; set; } = "";
+        public string FullName { get; set; } = "";
+        public string Address { get; set; } = "";
+    }
 }
