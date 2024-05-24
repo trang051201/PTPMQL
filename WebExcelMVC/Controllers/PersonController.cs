@@ -8,6 +8,8 @@ using System.Data;
 using WebExcelMVC.Models.Process;
 using OfficeOpenXml;
 using X.PagedList;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace WebExcelMVC.Controllers
 {
@@ -16,8 +18,20 @@ namespace WebExcelMVC.Controllers
         // Khai báo ApplicationDbContext để làm việc với CSDL
         private readonly ApplicationDbContext _context;
         // tạo phân trang
-        public async Task<IActionResult> Index(int ? page) {
-            var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
+        public async Task<IActionResult> Index(int ? page, int? PageSize)
+        {
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value="3", Text= "3" },
+                new SelectListItem() { Value="5", Text= "5" },
+                new SelectListItem() { Value="10", Text= "10" },
+                new SelectListItem() { Value="15", Text= "15" },
+                new SelectListItem() { Value="25", Text= "25" },
+                new SelectListItem() { Value="50", Text= "50" },
+            };
+            int Pagesize = (PageSize ?? 3);
+            ViewBag.psize = Pagesize;
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, Pagesize);
             return View(model);
         }
 
