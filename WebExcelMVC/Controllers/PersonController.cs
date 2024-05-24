@@ -27,12 +27,6 @@ namespace WebExcelMVC.Controllers
         {
             _context = context;
         }
-        // Action Index - trả về view 1 list dữ liệu person trong csdl
-        public async Task<IActionResult> Index()
-        {
-            var model = await _context.Person.ToListAsync();
-            return View(model);
-        }
         // Action create - trả về view thực hiện thêm mới 1 scdl
         public IActionResult Create()
         {
